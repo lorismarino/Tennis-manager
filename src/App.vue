@@ -67,6 +67,7 @@ input {
   box-shadow: 0 12px 32px -15px $big-stone;
 
   &:focus {
+    outline-width: 2px;
     outline-color: $pewter;
   }
 }

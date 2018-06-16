@@ -1,10 +1,12 @@
 import CreateGame from '@/components/CreateGame'
+import Score from '@/components/Score'
 
 export default {
   name: 'Home',
 
   components: {
-    CreateGame
+    CreateGame,
+    Score
   },
 
   data () {

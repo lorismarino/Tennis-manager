@@ -1,0 +1,104 @@
+@import '../../assets/scss/utils/colors';
+
+.score {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+
+  border: 1px solid $wiliam;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgba($wiliam, 0.7);
+
+  .player {
+    position: relative;
+
+    display: flex;
+
+    height: 30px;
+
+    align-items: center;
+
+    .name {
+      width: 120px;
+      padding-left: 10px;
+    }
+
+    .sets {
+      display: flex;
+
+      height: 100%;
+      margin-left: 20px;
+
+      align-items: center;
+      justify-content: center;
+      justify-content: center;
+
+      .set {
+        display: flex;
+
+        width: 25px;
+        height: 100%;
+
+        border-left: 1px solid rgba($ceramic, 0.3);
+
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background-color: $wiliam;
+        }
+
+        &.win {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .game {
+      display: flex;
+
+      width: 40px;
+      height: 100%;
+
+      border-left: 1px solid rgba($ceramic, 0.3);
+      background-color: $big-stone;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.player-1 .game {
+      border-top-right-radius: 5px;
+    }
+
+    &.player-2 .game {
+      border-bottom-right-radius: 5px;
+    }
+
+    &.player-1.active::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      content: '';
+
+      background-color: $pewter;
+    }
+  }
+
+  // Appearance of the score
+  &.score-enter-active {
+    left: -269px;
+
+    transition: left 1s cubic-bezier(0.07,0.93,0.74,0.94);
+    transition-delay: 0.5s;
+  }
+
+  &.score-enter-to {
+    left: 80px;
+  }
+}
