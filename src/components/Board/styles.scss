@@ -1,0 +1,57 @@
+@import '../../assets/scss/utils/colors';
+
+.board {
+  margin-top: 50px;
+
+  text-align: center;
+
+  .service {
+    font-size: 2em;
+
+    color: $pewter;
+  }
+
+  .winner {
+    font-size: 2em;
+
+    color: $pewter;
+  }
+
+  .add-point {
+    padding: 15px;
+
+    transition: box-shadow 0.1s;
+
+    color: $wiliam;
+    background-color: $ceramic;
+    box-shadow: 0 5px 15px 0 $wiliam;
+    &:last-child {
+      margin-left: 10px;
+    }
+    &:active {
+      box-shadow: 0 0 15px 0 $wiliam;
+    }
+  }
+
+  // Appearance of the board
+  &.board-enter-active {
+    transition: opacity 1.5s cubic-bezier(0.37, 0.57, 0.01, 0.74);
+    transition-delay: 0.7s;
+
+    opacity: 0;
+  }
+
+  &.board-enter-to {
+    opacity: 1;
+  }
+
+  .winner-enter-active {
+    transition: opacity 1s cubic-bezier(0.37, 0.57, 0.01, 0.74);
+
+    opacity: 0;
+  }
+
+  .winner-enter-to {
+    opacity: 1;
+  }
+}

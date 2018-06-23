@@ -1,25 +1,25 @@
 <transition name="score">
   <div v-if="startGame" class="score">
-    <div class="player player-1 active">
-      <div class="name">Loris</div>
+    <div :class="{ active : player1serve }" class="player player-1">
+      <div class="name">{{ player1 }}</div>
       <div class="sets">
-        <div class="set set-1 win">6</div>
-        <div class="set set-2">2</div>
-        <div class="set set-3 active win">7</div>
+        <div :class="{ win: player1WinSet1, active: isSet1 }" class="set set-1">{{ player1Set1 }}</div>
+        <div v-if="set2" :class="{ win: player1WinSet2, active: isSet2 }" class="set set-2">{{ player1Set2 }}</div>
+        <div v-if="set3" :class="{ win: player1WinSet3, active: isSet3 }" class="set set-3">{{ player1Set3 }}</div>
       </div>
-      <div class="game">
-        40
+      <div v-if="playing" class="game">
+        {{ player1Points }}
       </div>
     </div>
-    <div class="player player-2 active">
-      <div class="name">Mégane</div>
+    <div :class="{active : player2serve}" class="player player-2">
+      <div class="name">{{ player2 }}</div>
       <div class="sets">
-        <div class="set set-1">2</div>
-        <div class="set set-2 win">6</div>
-        <div class="set set-3 active">6</div>
+        <div :class="{ win: player2WinSet1, active: isSet1 }" class="set set-1">{{ player2Set1 }}</div>
+        <div v-if="set2" :class="{ win: player2WinSet2, active: isSet2 }" class="set set-2">{{ player2Set2 }}</div>
+        <div v-if="set3" :class="{ win: player2WinSet3, active: isSet3 }" class="set set-3">{{ player2Set3 }}</div>
       </div>
-      <div class="game">
-        40
+      <div v-if="playing" class="game">
+        {{ player2Points }}
       </div>
     </div>
   </div>

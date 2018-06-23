@@ -1,5 +1,5 @@
 <transition name="create-game">
-  <div v-if="!createGame" class="create-game">
+  <div v-if="!createGame" class="create-game" @keyup.enter="launch">
     <!-- Player 1 -->
     <div class="player player-1">
       <div class="player-name">

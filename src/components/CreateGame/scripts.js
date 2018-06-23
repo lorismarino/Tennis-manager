@@ -11,7 +11,7 @@ export default {
 
   methods: {
     launch () {
-      if (this.player1 && this.player2) {
+      if (/\w/i.test(this.player1) && /\w/i.test(this.player2) && this.player1 !== this.player2) {
         this.createGame = true
         this.$store.commit('setPlayers', [this.player1, this.player2])
       }

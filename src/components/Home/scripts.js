@@ -1,4 +1,5 @@
 import CreateGame from '@/components/CreateGame'
+import Board from '@/components/Board'
 import Score from '@/components/Score'
 
 export default {
@@ -6,6 +7,7 @@ export default {
 
   components: {
     CreateGame,
+    Board,
     Score
   },
 
@@ -19,9 +21,7 @@ export default {
 
   methods: {
     launch () {
-      if (this.player1 && this.player2) {
-        this.createGame = true
-      }
+      if (this.player1 && this.player2) this.createGame = true
     }
   }
 }

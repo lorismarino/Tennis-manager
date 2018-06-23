@@ -26,9 +26,12 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 
-  position: relative;
+  position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
 
+  width: 100%;
   height: 100%;
 
   color: $ceramic;
@@ -49,9 +52,6 @@ body {
   }
 
   .header {
-    position: absolute;
-
-    width: 100%;
     margin-top: 30px;
 
     text-align: center;

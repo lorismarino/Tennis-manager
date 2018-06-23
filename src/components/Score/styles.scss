@@ -76,13 +76,14 @@
       border-bottom-right-radius: 5px;
     }
 
-    &.player-1.active::before {
+    &.player-1.active::before,
+    &.player-2.active::before {
       position: absolute;
-      top: 0;
+      top: 10%;
       left: 0;
 
-      width: 4px;
-      height: 100%;
+      width: 3px;
+      height: 80%;
 
       content: '';
 
@@ -91,14 +92,25 @@
   }
 
   // Appearance of the score
-  &.score-enter-active {
-    left: -269px;
 
-    transition: left 1s cubic-bezier(0.07,0.93,0.74,0.94);
+  &.score-enter-active {
+    left: -219px;
+
+    transition: left 0.8s cubic-bezier(0.07,0.93,0.74,0.94);
     transition-delay: 0.5s;
   }
 
   &.score-enter-to {
     left: 80px;
+  }
+
+  .testeur-enter-active {
+    transition: opacity 1s;
+
+    opacity: 0;
+  }
+
+  .testeur-enter-to {
+    opacity: 1;
   }
 }
