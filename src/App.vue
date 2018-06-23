@@ -35,7 +35,7 @@ body {
   height: 100%;
 
   color: $ceramic;
-  background-image: url('assets/bg.jpg');
+  background-image: url('assets/img/bg.jpg');
   background-position: center;
   background-size: cover;
 
