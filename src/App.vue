@@ -17,6 +17,13 @@ export default {
 <style lang="scss">
 @import 'assets/scss/utils/colors';
 
+* {
+  box-sizing: border-box;
+  &:not(input) {
+    user-select: none;
+  }
+}
+
 html,
 body {
   height: 100%;
@@ -26,16 +33,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 0;
-  left: 0;
 
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 
   color: $ceramic;
   background-image: url('assets/img/bg.jpg');
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
 
@@ -52,9 +58,16 @@ body {
   }
 
   .header {
-    margin-top: 30px;
+    padding-top: 50px;
 
     text-align: center;
+    @media (max-width: 575px) {
+      padding: 0 15px;
+    }
+    h1 {
+      margin: 0;
+      padding: 10px;
+    }
   }
 }
 

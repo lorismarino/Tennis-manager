@@ -3,8 +3,7 @@ export default {
 
   data () {
     return {
-      set: 1,
-      winner: ''
+      set: 1
     }
   },
 
@@ -67,6 +66,11 @@ export default {
     // Get points tiebreak
     pointsTieBreak () {
       return this.$store.state.scores.pointsTieBreak
+    },
+
+    // Get winner
+    winner () {
+      return this.$store.state.winner
     }
   },
 
@@ -85,7 +89,7 @@ export default {
 
     pointsTieBreak () {
       // If tiebreak, change service each 2 points
-      if (this.pointsTieBreak % 2 === 0) {
+      if (this.pointsTieBreak % 2 === 1) {
         if (this.$store.state.service === this.$store.state.players[0]) this.$store.commit('setService', this.$store.state.players[1])
         else if (this.$store.state.service === this.$store.state.players[1]) this.$store.commit('setService', this.$store.state.players[0])
       }
@@ -96,7 +100,7 @@ export default {
       if (!this.playing) {
         this.$store.commit('setService', '')
         const winner = this.$store.state.scores.scores.player1.win === 2 ? this.$store.state.players[0] : this.$store.state.players[1]
-        this.winner = winner
+        this.$store.commit('setWinner', winner)
       }
     }
   }

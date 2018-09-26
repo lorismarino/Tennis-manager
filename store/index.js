@@ -13,7 +13,8 @@ export default new Vuex.Store({
 
   state: {
     players: '',
-    service: ''
+    service: '',
+    winner: ''
   },
 
   mutations: {
@@ -23,6 +24,10 @@ export default new Vuex.Store({
 
     setService (state, data) {
       state.service = data
+    },
+
+    setWinner (state, data) {
+      state.winner = data
     }
   }
 })

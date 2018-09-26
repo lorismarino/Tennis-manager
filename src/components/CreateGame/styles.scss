@@ -4,16 +4,24 @@
   display: flex;
 
   width: 100%;
-  margin-top: 120px;
+  margin-top: 100px;
 
   align-items: center;
   justify-content: center;
+  @media (max-width: 575px) {
+    flex-direction: column;
+
+    padding: 0 15px;
+  }
 
   .player {
     img {
-      width: 350px;
+      width: 100%;
 
       filter: brightness(0.8);
+      @media (max-width: 575px) {
+        display: none;
+      }
     }
 
     .player-name {
@@ -46,6 +54,9 @@
     margin: 0 70px;
 
     transition: color 0.3s cubic-bezier(0.33, 0.15, 1, 1);
+    @media (max-width: 575px) {
+      margin: 50px 0;
+    }
 
     &::before,
     &::after {
@@ -90,19 +101,21 @@
     transition: opacity 0.7s;
   }
 
-  &.create-game-leave-active .player {
-    transition: transform 0.7s cubic-bezier(0.40, 0.42, 0.40, 0.97);
-  }
-
   &.create-game-leave-to {
     opacity: 0;
   }
 
-  &.create-game-leave-to .player-1 {
-    transform: translateX(80%);
-  }
+  @media (min-width: 576px) {
+    &.create-game-leave-active .player {
+      transition: transform 0.7s cubic-bezier(0.40, 0.42, 0.40, 0.97);
+    }
 
-  &.create-game-leave-to .player-2 {
-    transform: translateX(-80%);
+    &.create-game-leave-to .player-1 {
+      transform: translateX(80%);
+    }
+
+    &.create-game-leave-to .player-2 {
+      transform: translateX(-80%);
+    }
   }
 }

@@ -16,8 +16,11 @@ export default {
 
       player1: {
         set1: 0, // Game win of set 1
+        tbs1: false, // Points of ti breack of set 1
         set2: 0, // Game win of set 2
+        tbs2: false, // Points of ti breack of set 2
         set3: 0, // Game win of set 3
+        tbs3: false, // Points of ti breack of set 3
         win: 0,
         winSet: {
           set1: false, // Set 1 if win
@@ -35,8 +38,11 @@ export default {
 
       player2: {
         set1: 0, // Game win of set 1
+        tbs1: false, // Points of ti breack of set 1
         set2: 0, // Game win of set 2
+        tbs2: false, // Points of ti breack of set 2
         set3: 0, // Game win of set 3
+        tbs3: false, // Points of ti breack of set 3
         win: 0,
         winSet: {
           set1: false, // Set 1 if win
@@ -61,6 +67,9 @@ export default {
 
         // Win tie break
         if (state.scores[player].points > 6 && state.scores[player].points >= state.scores[playerOpp].points + 2) {
+          state.scores[player][`set${state.set}`] = 7
+          state.scores.player1[`tbs${state.set}`] = state.scores.player1.points
+          state.scores.player2[`tbs${state.set}`] = state.scores.player2.points
           state.scores[player].winSet[`set${state.set}`] = true // Add win set
 
           if (state.scores[player].win === 0) state.set++ // Add next set
@@ -96,6 +105,7 @@ export default {
         else state.end = true // Set finish game
 
         state.scores[player].win++ // Add win
+        state.game++ // Add game
       } else {
         state.scores[player][`set${state.set}`]++ // Add win game in set
         state.game++ // Add game

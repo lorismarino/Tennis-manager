@@ -46,6 +46,21 @@ export default {
       if (this.$store.state.scores.set === 3) return true
     },
 
+    // Check is tie breack in set 1
+    tbs1 () {
+      if (this.$store.state.scores.scores.player1.tbs1) return true
+    },
+
+    // Check is tie breack in set 2
+    tbs2 () {
+      if (this.$store.state.scores.scores.player1.tbs2) return true
+    },
+
+    // Check is tie breack in set 3
+    tbs3 () {
+      if (this.$store.state.scores.scores.player1.tbs3) return true
+    },
+
     /*****
 
      * Get points
@@ -70,24 +85,48 @@ export default {
       return this.$store.state.scores.scores.player1.set1
     },
 
+    tbp1s1 () {
+      return this.$store.state.scores.scores.player1.tbs1
+    },
+
     player2Set1 () {
       return this.$store.state.scores.scores.player2.set1
+    },
+
+    tbp2s1 () {
+      return this.$store.state.scores.scores.player2.tbs1
     },
 
     player1Set2 () {
       return this.$store.state.scores.scores.player1.set2
     },
 
+    tbp1s2 () {
+      return this.$store.state.scores.scores.player1.tbs2
+    },
+
     player2Set2 () {
       return this.$store.state.scores.scores.player2.set2
+    },
+
+    tbp2s2 () {
+      return this.$store.state.scores.scores.player2.tbs2
     },
 
     player1Set3 () {
       return this.$store.state.scores.scores.player1.set3
     },
 
+    tbp1s3 () {
+      return this.$store.state.scores.scores.player1.tbs3
+    },
+
     player2Set3 () {
       return this.$store.state.scores.scores.player2.set3
+    },
+
+    tbp2s3 () {
+      return this.$store.state.scores.scores.player2.tbs3
     },
 
     /*****
@@ -134,6 +173,26 @@ export default {
 
     player2WinSet3 () {
       if (this.$store.state.scores.scores.player2.winSet.set3 === true) return true
+    },
+
+    /*****
+
+     * Get winner
+
+     *****/
+
+    isPlayer1Winner () {
+      // Get winner
+      if (this.$store.state.winner === this.$store.state.players[0]) {
+        return true
+      }
+    },
+
+    isPlayer2Winner () {
+      // Get winner
+      if (this.$store.state.winner === this.$store.state.players[1]) {
+        return true
+      }
     }
   }
 }
